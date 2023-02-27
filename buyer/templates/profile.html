@@ -1,0 +1,18 @@
+{%if messages%}
+{%for msg in messages%}
+  <div class="row">
+   <div class="col-1"></div>
+   <div class="col-10">
+      {{msg}}
+   </div>
+   <div class="col-1"></div>
+  </div>
+{%endfor%}
+{%endif%}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{%static 'css/index.css'%}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container px-1 px-lg-2 ">
+        <a class="navbar-brand fw-bold text-dark" href="#!">OLX</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <nav class="navbar bg-body-tertiary">
+                        <div class="container-fluid">
+                        </div>
+                    </nav>
+                    <nav class="navbar bg-body-tertiary">
+                        <div class="container-fluid">
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search " style="width: 400px;"
+                                    placeholder="Find Cars, Mobile Phones and more...." aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle " id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">English</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">Hindi</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">Malaylam</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">Tamil</a></li>
+                        </ul>
+                    <li class="nav-item"><a class="nav-link active ms-3" aria-current="page"
+                            href="{%url 'signin'%}">Login</a></li>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button type="submit" class="badge rounded-pill btn btn-danger">
+                        <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
+                        <a style="color: rgb(229, 235, 232);" class="fw-bold " href="{%url 'add-product'%}">Sell</a>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- second nav -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span class="text text-dark">All Categories</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cars</a></li>
+                            <li><a class="dropdown-item" href="#">Mobile</a></li>
+                            <li><a class="dropdown-item" href="#">Scooters</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end 2nd nav -->
+    <!-- Header-->
+    <header class=" py-1" style="background-color: #054350;">
+        {%if messages%}
+        {%for msg in messages%}
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{msg}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        {%endfor%}
+        {%endif%}
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                {{form.errors}}
+            </div>
+            <div class="col-1"></div>
+
+        </div>
+        <div class="container p-1 px-1 px-lg-3 my-3 bg-dark">
+            <div class="text-center text-warning">
+                <h1 class="display-5 fw-bolder">OLX CLONE</h1>
+                <p class="lead fw-normal text-white-50 mb-0 ">What are you looking for???</p>
+            </div>
+
+        </div>
+    </header>
+    <!-- header ends -->
+
+ <!-- Section-->
+ <section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          {%for product in products%}
+               <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    {%if product.photo%}
+                    <img class="card-img-top" src="{{product.photo.url}}" alt="..." />
+
+                    {%else%}
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+
+                    {%endif%}
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.name}}</h5>
+                            <!-- Product price-->
+                            {{product.price}}
+                            <div>{{product.category}}</div>
+                            <div>{{product.location}}</div>
+                            <div>{{product.created_at}}</div>
+                            
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{%url 'product-detail' product.id%}">View More</a></div>
+                    </div>
+                </div>
+            </div>
+
+
+          {%endfor%}
+        </div>
+    </div>
+</section>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+</body>
+
+</html>
